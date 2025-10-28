@@ -16,5 +16,6 @@ jobs:
         with:
           python_ver: '3.12'
           spec: 'main.py'
+          requirements: 'requirements.txt'
           upload_exe_with_name: 'DL_Ebook'
           options: --onefile, --name "DL Ebook", --console,
