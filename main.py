@@ -8,7 +8,7 @@ bookID = input("Enter book ID (Found at: https://ebook.pazdro.com.pl/app/book/<I
 
 if not (email and password and bookID):
 	print("Must fill in each field")
-	input()
+	input("Click [ENTER] to exit")
 	exit()
 
 print("\n[*] Attempting to login with credentials...")
@@ -16,7 +16,7 @@ print("\n[*] Attempting to login with credentials...")
 response = gettoken.getToken(email, password)
 if response["error"]:
 	print(f"[!] Error: {response['message']}")
-	input()
+	input("Click [ENTER] to exit")
 	exit()
 
 print(f"[*] Got access token")
@@ -37,7 +37,7 @@ print("[*] Fetching PDF...")
 with requests.get(f"https://ebook.pazdro.com.pl/api/library-cards/me/purchased-books/{bookID}/content", headers=headers, stream=True) as r:
 	if r.status_code != 200:
 		print("[!] Error - Book ID may be incorrect")
-		input()
+		input("Click [ENTER] to exit")
 		exit()
 	r.raise_for_status()
 
