@@ -1,4 +1,5 @@
 import requests, gettoken
+from sys import exit
 from math import ceil
 
 email = input("Enter your email/username: ")
